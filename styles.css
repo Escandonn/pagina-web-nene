@@ -1,0 +1,265 @@
+.navegacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    z-index: 3; /* Aseguramos que la navegación esté por encima del video */
+    font-size: 20px;
+    line-height: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    padding-right: 90px;
+}
+
+.navegacion ul {
+    list-style: none;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navegacion li {
+    margin-left: 40px;
+}
+
+.navegacion a {
+    color: #fffcfc; /* Texto oscuro */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+
+.navegacion a:hover {
+    color: #ccc;
+}
+
+.contenedor {
+    position: relative;
+    top: 30vh;
+    width: 100%;
+    height: 90vh;
+    z-index: 2; /* Aseguramos que el contenedor esté por encima del video */
+    display: flex;
+    justify-content: space-between;
+}
+
+.izq {
+    width: 30%;
+    height: 100%;
+    z-index: 2; /* Aseguramos que el div izq esté por encima del video */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 10%; /* Agregamos un margen izquierdo */
+    margin-bottom: 40px;
+    margin-top: -90px; /* Ajustamos la posición vertical */
+}
+
+.dere {
+    margin-left: 150px;
+    margin-bottom: 300px;
+    padding-right: 150px;
+    width: 100%;
+    height: 80%;
+    z-index: 2; /* Aseguramos que el div derecha esté por encima del video */
+}
+
+.bloque-video-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1; /* Aseguramos que el video esté detrás de todo el contenido */
+}
+
+.card-video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ajustamos el ancho para que cubra toda la pantalla */
+    height: 100vh;
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 0; /* Borde redondeado */
+    box-shadow: none; /* Sombra */
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+           
+
+.parrafo-1, .parrafo-2, .parrafo-3 {
+    padding-left: 30px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgba(0, 0, 0, 0.75);
+    animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+    visibility: hidden;
+}
+
+.parrafo-1 {
+    font-size: 48px;
+    color: #fdf;
+}
+
+.parrafo-2 {
+    font-size: 36px;
+    color: #f2f4f4;
+}
+
+.parrafo-3 {
+    font-size: 24px;
+    color: #eaecee;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgba(0, 0, 0, 0.75); }
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+      }
+    
+    .izq {
+        width: 100%;
+        height: 50vh;
+        margin-left: 0px; /* Eliminamos el margen izquierdo en dispositivos móviles */
+        text-align: center;
+
+      }
+    
+    .dere {
+        margin-left: 10px; /* Eliminamos el margen izquierdo en dispositivos móviles */
+        padding-right: 100px; /* Ajustamos el padding derecho para que las imágenes no se salgan de la pantalla */
+        width: 100%; /* Ajustamos el ancho para que las imágenes se adapten a la pantalla */
+        border-radius: 10px; /* Borde redondeado */
+
+      }
+
+    .parrafo-1{
+        font-size: 25px; /* Reducimos el tamaño de fuente en dispositivos móviles */
+        padding-left: 10px
+    }
+    
+    .parrafo-2,.parrafo-3 {
+        font-size: 18px; /* Reducimos el tamaño de fuente en dispositivos móviles */
+        padding-left: 10px; /* Reducimos el padding izquierdo en dispositivos móviles */
+      }
+
+    .parrafo-3{
+        font-size: 10px;
+        padding-right: 25px;
+    }
+ }
+         
+
+
+ .galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+  }
+  
+  .galeria-imagenes img {
+    
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .galeria-imagenes img:hover {
+    transform: scale(1.1);
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    z-index: 3; /* Agrega un z-index mayor que el del video de fondo */
+  }
+  
+  .footer-derecha {
+    float: right;
+    margin-right: 60px;
+  }
+  
+  .footer-imagen {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.5s;
+  }
+  
+  .footer-derecha {
+    float: right;
+    margin-right: 20px;
+  }
+  
+  .footer-imagen {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: girar 5s linear infinite;
+  }
+  
+  @keyframes girar {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+   .galeria-imagenes {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 5px;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+   .galeria-imagenes {
+      grid-template-columns: 1fr;
+      gap: 5px;
+      padding: 5px;
+    }
+  }
+
+ 
